@@ -73,4 +73,9 @@ printf "Installing Wine And Lutris"
 yay -S wine lutris
 printf "\n\n"
 
+printf "Installing Wine And Lutris"
+yay -S feh
+printf "\n\n"
+
 stow */
+feh --bg-scale ~/Pictures/Wallpapers/1109233.jpg
