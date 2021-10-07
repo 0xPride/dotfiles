@@ -1,5 +1,5 @@
 window:
-  opacity: 0.9
+  opacity: 0.97
 scrolling:
   history: 10000
   multiplier: 3
