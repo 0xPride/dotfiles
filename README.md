@@ -13,7 +13,7 @@ git clone https://github.com/project-HOSSAM/Dotefiles.git ~/Dotefiles
 ## Usage
 
 ```shell
-cd ~/Dotefiles;
+cd ~/Dotefiles
 chmod +x install.sh
 ./install.sh
 ```
