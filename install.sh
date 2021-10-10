@@ -18,11 +18,10 @@ cd /tmp/yay
 makepkg -si
 cd ~/Dotefiles
 
-yay -S zsh python neovim neovide alacritty kitty awesome stow feh compton
+yay -S zsh firefox python neovim neovide alacritty kitty awesome stow feh picom rofi zathura zathura-pdf-poppler man-db man-pager bat scrot htop neofetch ffmpeg xorg-xrdb mpv-full qbittorrent light-git paulseaudio alsa-lib alsa-plugins alsa-utils alsa-firmware
 
-# oh-my-zsh
-sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-
+# fonts
+yay -S ttf-hack ttf-font-awesome ttf-mononoki
 # node version manager
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.38.0/install.sh | bash 
 
@@ -39,6 +38,10 @@ export LUNARVIM_CACHE_DIR="${LUNARVIM_CACHE_DIR:-$HOME/.cache/lvim}"
 exec neovide -- -u "$LUNARVIM_RUNTIME_DIR/lvim/init.lua" "$@"' > ~/.local/bin/lvim-gui
 chmod +x ~/.local/bin/lvim-gui
 
-
 stow ~/Dotefiles/*/
 feh --bg-scale ~/Pictures/Wallpapers/1109233.jpg
+
+# oh-my-zsh
+sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+
+# TODO: setup dunst

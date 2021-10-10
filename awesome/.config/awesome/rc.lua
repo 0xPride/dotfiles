@@ -1,3 +1,5 @@
+local io = require("io")
+
 -- If LuaRocks is installed, make sure that packages installed through it are
 -- found (e.g. lgi). If LuaRocks is not installed, do nothing.
 pcall(require, "luarocks.loader")
@@ -17,10 +19,6 @@ local hotkeys_popup = require("awful.hotkeys_popup")
 -- Enable hotkeys help widget for VIM and other apps
 -- when client with a matching name is opened:
 require("awful.hotkeys_popup.keys")
-
--- Load Debian menu entries
-local debian = require("debian.menu")
-local has_fdo, freedesktop = pcall(require, "freedesktop")
 
 -- {{{ Error handling
 -- Check if awesome encountered an error during startup and fell back to
@@ -49,13 +47,13 @@ end
 
 -- {{{ Variable definitions
 -- Themes define colours, icons, font and wallpapers.
-beautiful.init(gears.filesystem.get_themes_dir() .. "default/theme.lua")
-beautiful.font = "Source Code Pro 10"
+-- beautiful.init(gears.filesystem.get_config_dir() .. "themes/nord.lua")
+beautiful.init("~/.config/awesome/themes/nord.lua")
 
 -- This is used later as the default terminal and editor to run.
-terminal = "alacritty"
+terminal = "kitty"
 browser = "firefox"
-editor = os.getenv("EDITOR") or "lvim-gui"
+editor = os.getenv("EDITOR") or "nano"
 editor_cmd = terminal .. " -e " .. editor
 
 -- Default modkey.
@@ -96,24 +94,10 @@ myawesomemenu = {
    { "quit", function() awesome.quit() end },
 }
 
-local menu_awesome = { "awesome", myawesomemenu, beautiful.awesome_icon }
-local menu_terminal = { "open terminal", terminal }
-
-if has_fdo then
-    mymainmenu = freedesktop.menu.build({
-        before = { menu_awesome },
-        after =  { menu_terminal }
-    })
-else
-    mymainmenu = awful.menu({
-        items = {
-                  menu_awesome,
-                  { "Debian", debian.menu.Debian_menu.Debian },
-                  menu_terminal,
-                }
-    })
-end
-
+mymainmenu = awful.menu({ items = { { "awesome", myawesomemenu, beautiful.awesome_icon },
+                                    { "open terminal", terminal }
+                                  }
+                        })
 
 mylauncher = awful.widget.launcher({ image = beautiful.awesome_icon,
                                      menu = mymainmenu })
@@ -127,7 +111,19 @@ mykeyboardlayout = awful.widget.keyboardlayout()
 
 -- {{{ Wibar
 -- Create a textclock widget
-mytextclock = wibox.widget.textclock()
+mytexttime = wibox.widget.textclock('<span color="' .. beautiful.nord11 .. '">%H:%M </span>', 60)
+mytexttime.font = beautiful.icon_font .. beautiful.icon_size
+mytextdate = wibox.widget.textclock('<span color="' .. beautiful.nord12 .. '">%d %b </span>', 60)
+mytextdate.font = beautiful.icon_font .. beautiful.icon_size
+
+-- sep
+local hori_sep = wibox.widget {
+    widget = wibox.widget.separator,
+    orientation = "horizontal",
+    forced_width = 10,
+    color = beautiful.bg_normal,
+}
+
 
 -- Create a wibox for each screen and add it
 local taglist_buttons = gears.table.join(
@@ -181,6 +177,66 @@ local function set_wallpaper(s)
     end
 end
 
+-- WIBAR Widget
+local clockicon = wibox.widget{
+    markup = ' <span color="'.. beautiful.nord11 ..'">\u{f017}</span> ',
+    align  = 'center',
+    valign = 'center',
+    widget = wibox.widget.textbox
+}
+clockicon.font = beautiful.icon_font .. beautiful.icon_size
+
+local calandericon = wibox.widget{
+    markup = ' <span color="'.. beautiful.nord12 ..'">\u{f073}</span> ',
+    align  = 'center',
+    valign = 'center',
+    widget = wibox.widget.textbox
+}
+calandericon.font = beautiful.icon_font .. beautiful.icon_size
+
+
+local wifiicon = wibox.widget{
+    markup = ' <span color="'.. beautiful.nord13 ..'">\u{f1eb}</span> ',
+    align  = 'center',
+    valign = 'center',
+    widget = wibox.widget.textbox
+}
+wifiicon.font = beautiful.icon_font .. 16
+
+local handle = io.popen("nmcli -t -f name connection show --active")
+local result = handle:read("*a")
+handle:close()
+
+local wifiname = wibox.widget{
+    markup = ' <span color="'.. beautiful.nord13 ..'">' .. result .. '</span> ',
+    align  = 'center',
+    valign = 'center',
+    widget = wibox.widget.textbox
+}
+wifiname.font = beautiful.icon_font .. beautiful.icon_size
+
+local lighticon = wibox.widget{
+    markup = ' <span color="'.. beautiful.nord14 ..'">\u{f185}</span> ',
+    align  = 'center',
+    valign = 'center',
+    widget = wibox.widget.textbox
+}
+lighticon.font = beautiful.icon_font .. beautiful.icon_size
+
+  -- light value
+
+local handle1 = io.popen("light")
+local result1 = handle1:read("*a")
+handle1:close()
+
+local lightval = wibox.widget{
+    markup = ' <span color="'.. beautiful.nord14 ..'">' .. result1 .. '</span> ',
+    align  = 'center',
+    valign = 'center',
+    widget = wibox.widget.textbox
+}
+lightval.font = beautiful.icon_font .. beautiful.icon_size
+
 -- Re-set wallpaper when a screen's geometry changes (e.g. different resolution)
 screen.connect_signal("property::geometry", set_wallpaper)
 
@@ -230,10 +286,21 @@ awful.screen.connect_for_each_screen(function(s)
         s.mytasklist, -- Middle widget
         { -- Right widgets
             layout = wibox.layout.fixed.horizontal,
-            mykeyboardlayout,
+            -- mykeyboardlayout,
             wibox.widget.systray(),
-            mytextclock,
-            s.mylayoutbox,
+            lighticon,
+            lightval,
+            hori_sep,
+            wifiicon,
+            wifiname,
+            hori_sep,
+            hori_sep,
+            calandericon,
+            mytextdate,
+            hori_sep,
+            clockicon,
+            mytexttime,
+            wibox.container.margin(s.mylayoutbox, 10),
         },
     }
 end)
@@ -330,13 +397,16 @@ globalkeys = gears.table.join(
               end,
               {description = "restore minimized", group = "client"}),
 
-    -- Dmenu
-    awful.key({ modkey },            "r",     function () awful.util.spawn("dmenu_run") end,
-              {description = "run dmenu", group = "launcher"}),
+    -- Rofi
+    awful.key({ modkey },            "r",     function () awful.spawn.with_shell("rofi -show run") end,
+              {description = "run prompt", group = "launcher"}),
+    -- Browser
+    awful.key({ modkey },            "b",     function () awful.spawn.with_shell(browser) end,
+              {description = "run browser", group = "launcher"}),
 
-    -- Dmenu
-    awful.key({ modkey },            "b",     function () awful.util.spawn(browser) end,
-              {description = "run the browser", group = "launcher"}),
+    -- Screenshot
+    awful.key({ modkey },            "Print",     function () awful.spawn.with_shell("scrot ~/Screenshot/%Y-%m-%d-%T-screenshot.png") end,
+              {description = "run browser", group = "launcher"}),
 
     awful.key({ modkey }, "x",
               function ()
@@ -579,7 +649,7 @@ client.connect_signal("request::titlebars", function(c)
 end)
 
 -- Enable sloppy focus, so that focus follows mouse.
-client.connect_signal("mouse::enter", function(c)
+client.connect_signal("mouse::click", function(c)
     c:emit_signal("request::activate", "mouse_enter", {raise = false})
 end)
 
@@ -587,7 +657,7 @@ client.connect_signal("focus", function(c) c.border_color = beautiful.border_foc
 client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_normal end)
 -- }}}
 
--- Autostart Applications
+-- Startup Application
 
-awful.spawn.with_shell("~/.fehbg")
-awful.spawn.with_shell("compton")
+awful.spawn.with_shell("feh --bg-fill --randomize ~/Pictures/Wallpapers/*")
+awful.spawn.with_shell("picom")
