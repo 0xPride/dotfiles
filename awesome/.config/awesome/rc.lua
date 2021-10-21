@@ -49,6 +49,7 @@ end
 -- Themes define colours, icons, font and wallpapers.
 -- beautiful.init(gears.filesystem.get_config_dir() .. "themes/nord.lua")
 beautiful.init("~/.config/awesome/themes/nord.lua")
+beautiful.useless_gap = 2
 
 -- This is used later as the default terminal and editor to run.
 terminal = "kitty"
@@ -659,5 +660,5 @@ client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_n
 
 -- Startup Application
 
-awful.spawn.with_shell("feh --bg-fill --randomize ~/Pictures/Wallpapers/*")
+awful.spawn.with_shell("feh --bg-fill --randomize ~/Pictures/*")
 awful.spawn.with_shell("picom")

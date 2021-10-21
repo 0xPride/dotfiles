@@ -9,8 +9,8 @@
     background-color:            #2e3440;
     border-color:                #5e81ac;
     text-color:                  #eceff4;
-    font:                        "Hack 11";
-    prompt-font:                 "Mononoki Bold 11";
+    font:                        "Source Code Pro 11";
+    prompt-font:                 "Source Code Pro Bold 11";
     prompt-background:           #4c566a;
     prompt-foreground:           #e5e9f0;
     prompt-padding:              6px;
@@ -22,7 +22,7 @@
 }
 #window {
     border:  1;
-    padding: 5;
+    padding: 15;
 }
 #mainbox {
     border:  0;

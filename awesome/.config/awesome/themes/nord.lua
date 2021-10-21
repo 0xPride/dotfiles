@@ -12,7 +12,7 @@ local themes_path = gfs.get_themes_dir()
 
 local theme = {}
 
-theme.font          = "Hack 10"
+theme.font          = "Inter 8"
 
 theme.bg_normal     = xrdp.background
 theme.bg_focus      = "#535d6c"
@@ -40,6 +40,8 @@ theme.nord15 = "#bf616a";
 theme.icon_size = 9
 theme.icon_font = "Font Awesome 5 Free-Solid-900 " -- attention to space at the end!
 theme.icon_color = "#587D8D"
+
+theme.icon_theme = "/usr/share/icons/Papirus"
 
 -- There are other variable sets
 -- overriding the default one when

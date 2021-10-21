@@ -18,7 +18,7 @@ cd /tmp/yay
 makepkg -si
 cd ~/Dotefiles
 
-yay -S zsh firefox python neovim neovide alacritty kitty awesome stow feh picom rofi zathura zathura-pdf-poppler man-db man-pager bat scrot htop neofetch ffmpeg xorg-xrdb mpv-full qbittorrent light-git paulseaudio alsa-lib alsa-plugins alsa-utils alsa-firmware
+yay -S zsh firefox python neovim neovide alacritty kitty awesome stow feh picom rofi zathura zathura-pdf-poppler man-db man-pager bat scrot htop neofetch ffmpeg xorg-xrdb mpv-full qbittorrent light-git paulseaudio alsa-lib alsa-plugins alsa-utils alsa-firmware sway swayidle swaylock waybar swappy grim wofi nerd-fonts-mononoki gammastep
 
 # fonts
 yay -S ttf-hack ttf-font-awesome ttf-mononoki

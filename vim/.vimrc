@@ -40,6 +40,7 @@ call plug#begin('~/.vim/plugged')
     Plug 'junegunn/limelight.vim'                      " Hyperfocus on a range
     Plug 'junegunn/vim-emoji'                          " Vim needs emojis!
     Plug 'arcticicestudio/nord-vim'
+    Plug 'ghifarit53/tokyonight-vim'
 
 call plug#end()
 
@@ -82,7 +83,7 @@ let g:rehash256 = 1
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " The lightline.vim theme
 let g:lightline = {
-      \ 'colorscheme': 'darcula',
+      \ 'colorscheme': 'tokyonight',
       \ }
 
 " Always show statusline
@@ -233,3 +234,10 @@ colorscheme nord
 let g:lightline = {
           \ 'colorscheme': 'nord',
       \ }
+
+set termguicolors
+
+let g:tokyonight_style = 'storm' " available: night, storm
+let g:tokyonight_enable_italic = 1
+
+colorscheme tokyonight
