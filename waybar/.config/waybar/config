@@ -22,7 +22,7 @@
 	}
      },
 	"custom/date": {
-    		"format": "󰸗 {}",
+    "format": " {}",
 		"interval": 3600,
 		"exec": "/home/pride/.local/bin/waybar-date.sh"
 	},
@@ -32,8 +32,10 @@
 	},
 	"clock": {
 		"format": " {:%H:%M}",
-        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small></small></tt>",
-        "format-alt": "{:%Y-%m-%d}"
+    "locale": "en_GB.utf8",
+    "timezone": "Africa/Casablanca",
+    "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small></small></tt>",
+    "format-alt": "{:%Y-%m-%d}"
 	},
 	"battery": {
         	"states": {
@@ -41,8 +43,8 @@
             		"critical": 15,
         	},
         	"format": "{icon} {capacity}%",
-        	"format-charging": "󰂄 {capacity}%",
-        	"format-plugged": "󰂄{capacity}%",
+        	"format-charging": " {capacity}%",
+        	"format-plugged": " {capacity}%",
         	"format-alt": "{time} {icon}",
         	"format-full": " {capacity}%",
         	"format-icons": ["", "", ""]
@@ -51,12 +53,12 @@
         	"format-wifi": "  {essid}",
         	"format-ethernet": "{ifname}: {ipaddr}/{cidr} ",
         	"format-linked": "{ifname} (No IP) ",
-        	"format-disconnected": "󰤮 Disconnected",
+        	"format-disconnected": "睊 Disconnected",
         	"format-alt": "{ifname}: {ipaddr}/{cidr}"
 	},
 	"pulseaudio": {
 		"format": "{icon}  {volume}%",
-        	"format-muted": "󰖁 Muted",
+        	"format-muted": "婢 Muted",
         "format-icons": {
             "headphone": "",
             "hands-free": "",

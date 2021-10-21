@@ -31,6 +31,9 @@ set $right l
 ## terminal emulator
 set $term kitty
 
+## browser
+set $browser firefox
+
 ## Your preferred application launcher
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 # on the original workspace that the command was run on.
@@ -60,6 +63,9 @@ focus_follows_mouse no
 # Start a terminal
 bindsym $mod+Return exec $term
 
+# Start a browser
+bindsym $mod+Shift+b exec $browser
+
 # Kill focused window
 bindsym $mod+q kill
 
@@ -80,10 +86,10 @@ bindsym Shift+print exec grim -g "$(slurp)" - | swappy -f -
     floating_modifier $mod normal
 
 # Reload the configuration file
-bindsym $mod+Shift+c reload
+bindsym $mod+Shift+r reload
 
 # Exit sway (logs you out of your Wayland session)
-bindsym $mod+Shift+e exec swaynag -t custom -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -b 'Yes, exit sway' 'swaymsg exit'
+bindsym $mod+Shift+q exec swaynag -t custom -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -b 'Yes, exit sway' 'swaymsg exit'
 
 # Moving around:
 #
