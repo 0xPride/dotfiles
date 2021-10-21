@@ -1,6 +1,7 @@
 # Dotefiles
 
 my dotefiles with install script that installs all my preferred programs.
+it is not yet ready for public use.
 
 ## Installation
 
