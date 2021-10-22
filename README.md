@@ -32,19 +32,19 @@ chmod +x install.sh
 ## Screenshots
 
 #### Desktop
-![Screenshot of clean system](images/desktop.png)
+![Screenshot of the system](images/desktop.png)
 
 #### vim
-![Screenshot of clean system](images/vim.png)
+![Screenshot of vim](images/vim.png)
 
 #### wofi
-![Screenshot of clean system](images/wofi.png)
+![Screenshot of wofi](images/wofi.png)
 
 #### zathura
-![Screenshot of clean system](images/zathura.png)
+![Screenshot of zathura](images/zathura.png)
 
 #### swaymsg
-![Screenshot of clean system](images/swaymsg.png)
+![Screenshot of swaymsg](images/swaymsg.png)
 
 #### wallpaper
-![Screenshot of clean system](images/wallpaper.jpg)
+![the wallpaper](images/wallpaper.jpg)
