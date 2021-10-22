@@ -109,12 +109,9 @@ export PATH=$HOME/.local/bin:$PATH
 
 export BAT_THEME="Nord"
 
-# function vcode() {
-#     code --enable-features=UseOzonePlatform --ozone-platform=wayland $@
-# }
+# running code under wayland
+alias wcode="code --enable-features=UseOzonePlatform --ozone-platform=wayland $@"
 
-alias code="code --enable-features=UseOzonePlatform --ozone-platform=wayland $@"
-LANG=en_US.UTF-8
-LANGUAGE=en_AU:en_GB:en
-LC_TIME=en_GB.UTF-8
-LC_COLLATE=C
+function cs() {
+  g++ -std=c++11 -O2 -Wall $@ -o main
+}

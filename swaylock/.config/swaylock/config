@@ -1,7 +1,7 @@
 ignore-empty-password
 disable-caps-lock-text
 image=/home/pride/Pictures/gg.png
-font=Inter
+font=SF Pro
 
 text-ver-color=00000000
 text-wrong-color=00000000

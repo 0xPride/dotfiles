@@ -1,17 +1,17 @@
 window {
 margin: 0px;
-border: 2px solid #414868;
+border: 2px solid #c678dd;
 border-radius: 5px;
-background-color: #24283b;
+background-color: #282c34;
 font-family: JetBrains Mono;
 font-size: 12px;
 }
 
 #input {
 margin: 5px;
-border: 1px solid #24283b;
+border: 1px solid #282c34;
 color: #c0caf5;
-background-color: #24283b;
+background-color: #282c34;
 }
 
 #input image {
@@ -21,13 +21,13 @@ background-color: #24283b;
 #inner-box {
 margin: 5px;
 border: none;
-background-color: #24283b;
+background-color: #282c34;
 }
 
 #outer-box {
 margin: 5px;
 border: none;
-background-color: #24283b;
+background-color: #282c34;
 }
 
 #scroll {
@@ -42,11 +42,13 @@ color: #c0caf5;
 } 
 
 #entry:selected {
-	background-color: #414868;
+	background-color: #abb2bf;
 	font-weight: normal;
+	color: #282c34;
 }
 
 #text:selected {
-	background-color: #414868;
+	background-color: #abb2bf;
 	font-weight: normal;
+	color: #282c34;
 }

@@ -12,7 +12,7 @@ window#waybar {
 }
 
 #workspaces {
-	background-color: #24283b;
+	background-color: #282c34;
 	margin: 5px;
 	margin-left: 10px;
 	border-radius: 5px;
@@ -23,63 +23,63 @@ window#waybar {
 }
 
 #workspaces button.focused {
-    color: #24283b;
-    background-color: #7aa2f7;
+	color: #282c34;
+    background-color: #abb2bf;
     border-radius: 5px;
 }
 
 #workspaces button:hover {
 	background-color: #7dcfff;
-	color: #24283b;
+	color: #282c34;
 	border-radius: 5px;
 }
 
 #custom-date, #clock, #battery, #pulseaudio, #network {
-	background-color: #24283b;
+	background-color: #282c34;
 	padding: 5px 10px;
 	margin: 5px 0px;
 }
 
 #custom-date {
-	color: #7dcfff;
+	color: #61afef;
 }
 
 #custom-power {
-	color: #24283b;
-	background-color: #db4b4b;
+	color: #282c34;
+	background-color: #56b6c2;
 	border-radius: 5px;
-	margin-right: 5px;
+	margin-right: 10px;
 	margin-top: 5px;
-	margin-bottom: 5px;
+	margin-bottom: 10px;
 	margin-left: 10px;
 	padding: 5px 10px;
 }
 
 #clock {
-    color: #b48ead;
+    color: #c678dd;
     border-radius: 0px 5px 5px 0px;
     margin-right: 10px;
 }
 
 #battery {
-    color: #9ece6a;
+    color: #98c379;
 }
 
 #battery.charging {
-    color: #9ece6a;
+    color: #98c379;
 }
 
 #battery.warning:not(.charging) {
     background-color: #f7768e;
-    color: #24283b;
+	color: #282c34;
     border-radius: 5px 5px 5px 5px;
 }
 
 #network {
-	color: #f7768e;
+	color: #e06c75;
 	border-radius: 5px 0px 0px 5px;
 }
 
 #pulseaudio {
-	color: #e0af68;
+	color: #e5c07b;
 }
