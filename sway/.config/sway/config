@@ -1,5 +1,6 @@
 # Auto Start
 exec gammastep
+exec mako
 
 # Styles
 # Style
@@ -50,10 +51,10 @@ focus_follows_mouse no
 #
 # Example configuration:
 #
- exec swayidle -w \
-          timeout 600 'swaylock -f' \
-          timeout 570 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"' \
-          before-sleep 'swaylock -f'
+# exec swayidle -w \
+#          timeout 600 'swaylock -f' \
+#          timeout 570 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"' \
+#          before-sleep 'swaylock -f'
 
 
 # Key bindings

@@ -1,12 +1,12 @@
 anchor=bottom-right
 font=mononoki Nerd Font 10
-background-color=#24283b
-text-color=#c0caf5
+background-color=#282c34
+text-color=#abb2bf
 width=350
 margin=0,20,20
 padding=10
 border-size=2
-border-color=#414868
+border-color=#c678dd
 border-radius=5
 default-timeout=10000
 group-by=summary
