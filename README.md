@@ -10,15 +10,14 @@
 </p>
 
 
-my dotefiles with install script that installs all my preferred programs.
-it is not yet ready for public use.
+my dotefiles with install script that installs all my preferred programs. it is not yet ready for public use.
 
 ## Installation
 
 Use git to clone the repo.
 
 ```bash
-git clone https://github.com/project-HOSSAM/Dotefiles.git ~/Dotefiles
+git clone https://github.com/project-HOSSAM/dotfiles.git ~/Dotefiles
 ```
 
 ## Usage
