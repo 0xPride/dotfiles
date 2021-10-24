@@ -18,7 +18,10 @@ cd /tmp/yay
 makepkg -si
 cd ~/Dotefiles
 
-yay -S firefox python neovim alacritty kitty stow zathura zathura-pdf-poppler man-db man-pager bat htop neofetch ffmpeg xorg-xwayland mpv-full light-git paulseaudio alsa-lib alsa-plugins alsa-utils alsa-firmware sway swayidle swaylock waybar swappy grim wofi  gammastep slurp imv mako
+yay -S firefox python neovim alacritty kitty stow zathura zathura-pdf-poppler \
+  man-db man-pager bat htop neofetch ffmpeg xorg-xwayland mpv-full light-git \
+  paulseaudio alsa-lib alsa-plugins alsa-utils alsa-firmware sway swayidle \
+  swaylock waybar swappy grim wofi gammastep slurp imv mako ly
 
 # fonts
 yay -S ttf-hack ttf-font-awesome ttf-mononoki nerd-fonts-mononoki
@@ -39,6 +42,10 @@ exec neovide -- -u "$LUNARVIM_RUNTIME_DIR/lvim/init.lua" "$@"' > ~/.local/bin/lv
 chmod +x ~/.local/bin/lvim-gui
 
 stow ~/Dotefiles/*/
+
+# display manager
+sudo systemctl enable ly.service
+sudo systemctl disable getty@tty2.service
 
 # zsh
 yay -S zsh
