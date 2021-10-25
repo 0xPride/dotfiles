@@ -13,6 +13,8 @@ echo "
 sudo pacman -Syu
 sudo pacman -Syy
 
+sudo pacman -S base-devel
+
 git clone https://aur.archlinux.org/yay.git /tmp/yay
 cd /tmp/yay
 makepkg -si
