@@ -1,0 +1,133 @@
+window:
+  opacity: 0.1
+scrolling:
+  history: 10000
+  multiplier: 3
+font:
+  normal:
+    family: SFMono Nerd Font
+    style: Semibold
+  bold:
+    family: SFMono Nerd Font
+    style: Bold
+  italic:
+    family: SFMono Nerd Font
+    style: Regular Italic
+  size: 11
+  offset:
+    x: 0
+    y: 0
+  glyph_offset:
+    x: 0
+    y: 0
+  use_thin_strokes: true
+debug:
+  render_timer: false
+normal:
+  black: "0x1e2127"
+  red: "0xe06c75"
+  green: "0x98c379"
+  yellow: "0xd19a66"
+  blue: "0x61afef"
+  magenta: "0xc678dd"
+  cyan: "0x56b6c2"
+  white: "0x828791"
+bell:
+  animation: EaseOutExpo
+  duration: 1
+mouse_bindings:
+  - mouse: Middle
+    action: PasteSelection
+selection:
+  semantic_escape_chars: ",│`|:\"' ()[]{}<>"
+  save_to_clipboard: true
+cursor:
+  style: Block
+  unfocused_hollow: false
+live_config_reload: true
+key_bindings:
+  - key: Paste
+    action: Paste
+  - key: Copy
+    action: Copy
+  - key: L
+    mods: Control
+    action: ClearLogNotice
+  - key: L
+    mods: Control
+    mode: ~Vi|~Search
+    chars: "\f"
+  - key: PageUp
+    mods: Shift
+    mode: ~Alt
+    action: ScrollPageUp
+  - key: PageDown
+    mods: Shift
+    mode: ~Alt
+    action: ScrollPageDown
+  - key: Home
+    mods: Shift
+    mode: ~Alt
+    action: ScrollToTop
+  - key: End
+    mods: Shift
+    mode: ~Alt
+    action: ScrollToBottom
+
+# # Colors (Nord)
+# colors:
+#   # Default colors
+#   primary:
+#     background: '0x2E3440'
+#     foreground: '0xD8DEE9'
+
+#   # Normal colors
+#   normal:
+#     black:   '0x3B4252'
+#     red:     '0xBF616A'
+#     green:   '0xA3BE8C'
+#     yellow:  '0xEBCB8B'
+#     blue:    '0x81A1C1'
+#     magenta: '0xB48EAD'
+#     cyan:    '0x88C0D0'
+#     white:   '0xE5E9F0'
+
+#   # Bright colors
+#   bright:
+#     black:   '0x4C566A'
+#     red:     '0xBF616A'
+#     green:   '0xA3BE8C'
+#     yellow:  '0xEBCB8B'
+#     blue:    '0x81A1C1'
+#     magenta: '0xB48EAD'
+#     cyan:    '0x8FBCBB'
+#     white:   '0xECEFF4'
+
+# Colors (One Dark)
+colors:
+  # Default colors
+  primary:
+    background: '0x1e2127'
+    foreground: '0xabb2bf'
+
+  # Normal colors
+  normal:
+    black:   '0x1e2127'
+    red:     '0xe06c75'
+    green:   '0x98c379'
+    yellow:  '0xd19a66'
+    blue:    '0x61afef'
+    magenta: '0xc678dd'
+    cyan:    '0x56b6c2'
+    white:   '0xabb2bf'
+
+  # Bright colors
+  bright:
+    black:   '0x5c6370'
+    red:     '0xe06c75'
+    green:   '0x98c379'
+    yellow:  '0xd19a66'
+    blue:    '0x61afef'
+    magenta: '0xc678dd'
+    cyan:    '0x56b6c2'
+    white:   '0xffffff'

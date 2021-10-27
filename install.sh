@@ -23,7 +23,8 @@ cd ~/Dotefiles
 yay -S firefox python neovim alacritty kitty stow zathura zathura-pdf-poppler \
   man-db man-pager bat htop neofetch ffmpeg xorg-xwayland mpv-full light-git \
   paulseaudio alsa-lib alsa-plugins alsa-utils alsa-firmware sway swayidle \
-  swaylock waybar swappy grim wofi gammastep slurp imv mako ly
+  swaylock waybar swappy grim wofi gammastep slurp imv mako ly mpd ncmpcpp \
+  playerctl
 
 # fonts
 yay -S ttf-hack ttf-font-awesome ttf-mononoki nerd-fonts-mononoki

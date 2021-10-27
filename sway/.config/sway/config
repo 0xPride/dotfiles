@@ -194,9 +194,9 @@ bindsym --locked XF86AudioLowerVolume exec sh -c "pactl set-sink-mute @DEFAULT_S
 bindsym --locked XF86AudioMute exec pactl set-sink-mute 45 toggle
 bindsym XF86MonBrightnessUp exec light -A 2 && notify-send "󰃞 Light" "Brightness: $(light)%"
 bindsym XF86MonBrightnessDown exec light -U 2 && notify-send "󰃞 Light" "Brightness: $(light)%"
-bindsym --locked XF86AudioPlay exec mpc toggle
-bindsym --locked XF86AudioNext exec mpc next
-bindsym --locked XF86AudioPrev exec mpc prev
+bindsym --locked XF86AudioPlay exec playerctl play-pause
+bindsym --locked XF86AudioNext exec playerctl next
+bindsym --locked XF86AudioPrev exec mpc previous
 #
 # Status Bar:
 #
