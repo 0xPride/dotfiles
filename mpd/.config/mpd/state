@@ -1,8 +1,8 @@
 sw_volume: 100
-audio_device_state:1:pulse audio
-state: pause
+audio_device_state:1:ALSA sound card
+state: play
 current: 0
-time: 219.811000
+time: 65.819000
 random: 0
 repeat: 0
 single: 0
@@ -11,5 +11,5 @@ crossfade: 0
 mixrampdb: 0.000000
 mixrampdelay: -1.000000
 playlist_begin
-0:Feeling Good Mix - Emma Péters, Carla Morrison [2020]-qKlUpmZwsyw.mp3
+0:Demon Slayer 👺 [lofi hip hop_relaxing beats]-4K_FXp8YAMA.mp3
 playlist_end

@@ -116,7 +116,3 @@ function cs() {
   g++ -std=c++11 -O2 -Wall $@ -o main
 }
 
-function ncmpcpp() {
-  mpDris2
-  ncmpcpp
-}
