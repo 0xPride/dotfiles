@@ -15,10 +15,7 @@ sudo pacman -Syy
 
 sudo pacman -S base-devel
 
-git clone https://aur.archlinux.org/yay.git /tmp/yay
-cd /tmp/yay
-makepkg -si
-cd ~/Dotefiles
+cd ~/dotfiles
 
 yay -S firefox python neovim alacritty kitty stow zathura zathura-pdf-poppler \
   man-db man-pager bat htop neofetch ffmpeg xorg-xwayland mpv-full light-git \

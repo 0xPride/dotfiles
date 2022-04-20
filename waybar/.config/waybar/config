@@ -27,7 +27,7 @@
 	},
 	"clock": {
 		"format": " {:%H:%M}",
-    "locale": "en_GB.utf8",
+    "locale": "en_US.utf8",
     "timezone": "Africa/Casablanca",
     "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small></small></tt>",
     "format-alt": "{:%Y-%m-%d}"

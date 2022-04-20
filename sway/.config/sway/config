@@ -4,11 +4,11 @@ exec mako
 
 # Styles
 # Style
-font pango:mononoki Nerd Font 14px 
+font pango:mononoki Nerd Font 12px 
 default_border pixel 2
-titlebar_border_thickness 2
-gaps outer 5
-gaps inner 5
+titlebar_border_thickness 1
+gaps outer 1
+gaps inner 1
 
 ## Touchpad settings
 input type:touchpad {
@@ -30,7 +30,7 @@ set $right l
 # Defaults
 
 ## terminal emulator
-set $term kitty
+set $term alacritty
 
 ## browser
 set $browser brave
@@ -42,7 +42,7 @@ set $menu wofi --hide-scroll | xargs swaymsg exec --
 
 ## Output configuration
 # Default wallpaper 
-output * bg /home/pride/Pictures/HD wallpaper anime woman in blue top illustration, WLOP, Violet Evergarden.jpg fill
+output * bg /home/pride/Pictures/wallpaper.jpg fill
 
 # Behavior
 focus_follows_mouse no

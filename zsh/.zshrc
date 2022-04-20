@@ -116,3 +116,5 @@ function cs() {
   g++ -std=c++11 -O2 -Wall $@ -o main
 }
 
+export VOLTA_HOME="$HOME/.volta"
+export PATH="$VOLTA_HOME/bin:$PATH"

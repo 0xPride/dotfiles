@@ -14,7 +14,7 @@
   # TERM: xterm-256color-italic
 
 window:
-  opacity: 0.9
+  opacity: 0.97
   # Window dimensions (changes require restart)
   #
   # Specified in number of columns/lines, not pixels. If both are zero this
@@ -69,7 +69,7 @@ font:
   # Style can be specified to pick a specific face.
   normal:
     family: SFMono Nerd Font
-    style: Semibold
+    style: Regulare
 
   # The bold font face
   bold:
@@ -82,7 +82,7 @@ font:
     style: Italic
 
   # Point size of the font
-  size: 11.0
+  size: 10.0
 
   # Offset is the extra space around each character. offset.y can be thought of
   # as modifying the linespacing, and offset.x as modifying the letter spacing.
@@ -177,7 +177,6 @@ bell:
   duration: 0
 
 # Background opacity
-background_opacity: 1.0
 
 # Key bindings
 #
@@ -401,7 +400,9 @@ cursor:
   #   - ▇ Block
   #   - _ Underline
   #   - | Beam
-  style: Block
+  style: Beam
+
+  vi_mod_style: Block
 
   # If this is `true`, the cursor will be rendered as a hollow box when the
   # window is not focused.
@@ -440,8 +441,8 @@ debug:
 #
 # You can set shell.program to the path of your favorite shell, e.g. /bin/fish.
 # Entries in shell.args are passed unmodified as arguments to the shell.
-#shell:
-  #program: /usr/local/bin/zsh
+shell:
+  program: /usr/bin/zsh
     #args:
     #- --command=tmux
 
